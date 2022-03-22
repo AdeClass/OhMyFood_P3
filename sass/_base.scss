@@ -1,0 +1,87 @@
+$primary-color: #9356DC;
+$secondary-color: #FF79DA;
+$tertiary-color: #99E2D0;
+$shadow-color: #c4c3c0;
+
+@mixin shadow {
+    box-shadow: 2px 2px 10px $shadow-color;
+}
+
+@mixin darker-shadow{
+    box-shadow: 2px 2px 20px black;
+}
+
+@mixin gradient-color {
+    background-image: linear-gradient($secondary-color, $primary-color);
+}
+
+.badge_new{
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 80px;
+    background-color: $tertiary-color;
+    color: #008766;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}
+
+
+h1{
+    font-family: 'Shrikhand', sans-serif;
+    font-size: 30px;
+}
+
+h2{
+    font-size: 24px;
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+img{
+    max-width: 100%;
+    padding: 0;
+}
+
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.btn{
+    display: block;
+    width: max-content;
+    margin: auto;
+    @include gradient-color;  
+    color: white;
+    border-radius: 30px;
+    @include shadow;
+    padding: 15px 20px;
+    font-weight: bold;
+    transform: scale(1);
+    transition: transform 500ms;
+    opacity: 1;
+    &:hover{
+        transform: scale(1.1);
+        opacity: 0.8;
+        @include darker-shadow;
+    }
+}
+
